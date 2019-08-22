@@ -26,4 +26,7 @@ void ReversePrintList(ListNode* head);
 
 BinaryTree* Reconstruct(int* pre_order, int* mid_order, int length);
 
+void QuickSort(int arr[], int start, int end);
+
+
 #endif //CPPLIB_CHAPTER3_BASE_H

@@ -2,6 +2,7 @@
 // Created by 钟乘永 on 2019-07-28.
 //
 #include "chapter2_base.h"
+#include "chapter3_base.h"
 #include <gtest/gtest.h>
 #include <cassert>
 
@@ -33,4 +34,15 @@ TEST(SWORDOFFER_CHAPTER3, DOUBLE_EQUAL){
     float fa = 0.1 + 0.1;
     float fb = 0.2;
     assert(fa == fb);
+}
+
+TEST(SWORDOFFER_SORT, QUICK){
+    int arr[] = {3, 1, 2, 4, 5, 7, 6};
+    QuickSort(arr, 0, 6);
+    int result[] = {1, 2, 3, 4, 5, 6, 7};
+    for(size_t i = 0; i < 7; i++){
+        cout << arr[i] << " ";
+        EXPECT_EQ(arr[i], result[i]);
+    }
+    cout << endl;
 }
