@@ -5,6 +5,10 @@
 #ifndef CPPLIB_CHAPTER3_BASE_H
 #define CPPLIB_CHAPTER3_BASE_H
 
+#include <vector>
+
+using namespace std;
+
 struct ListNode{
     int value;
     ListNode* next;
@@ -28,5 +32,10 @@ BinaryTree* Reconstruct(int* pre_order, int* mid_order, int length);
 
 void QuickSort(int arr[], int start, int end);
 
+void SortAge(int arr[], int length);
+
+int FindLeastNumber(vector<int> arr);
+
+int NumberOf1(int n);
 
 #endif //CPPLIB_CHAPTER3_BASE_H

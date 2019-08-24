@@ -79,3 +79,42 @@ void QuickSort(int arr[], int start, int end){
         QuickSort(arr, i + 1, end);
     }
 }
+
+void SortAge(int arr[], int length){
+    if(arr == nullptr || length <= 0){
+        throw std::invalid_argument("array is empty");
+    }
+    constexpr int OLDEST_AGE = 100;
+    int age_count[OLDEST_AGE];
+    int age;
+    for(int i = 0; i < length; i++){
+        age = arr[i];
+        ++age_count[age];
+    }
+    int index = 0;
+    for(int i = 0; i < OLDEST_AGE; i++){
+        for(int j = 0; j < age_count[i]; j++){
+            arr[index++] = i;
+        }
+    }
+}
+
+
+int FindLeastNumber(vector<int> arr){
+    for(size_t i = 1; i < arr.size(); i++){
+        if(arr[i - 1] > arr[i]) return arr[i];
+    }
+    return arr[0];
+}
+
+/**
+ * n-1 & n将最右边的1修改为0
+ * */
+int NumberOf1(int n){
+    int count = 0;
+    while(n){
+        n = (n - 1) & n;
+        ++count;
+    }
+    return count;
+}
