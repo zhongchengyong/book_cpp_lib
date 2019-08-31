@@ -38,4 +38,30 @@ int FindLeastNumber(vector<int> arr);
 
 int NumberOf1(int n);
 
+void ReorderOddEven(int* p_data, size_t length);
+
+/*
+ * 使用函数指针，这样函数可扩展性更强
+ */
+void ReorderOddEven(int* p_data, size_t length, bool (*func)(int));
+
+ListNode* FindKthNode(ListNode* head, unsigned int k);
+
+ListNode* Merge(ListNode* first, ListNode* second);
+
+bool HasSubtree(BinaryTree* first, BinaryTree* second);
+
+void MirrorBinaryTree(BinaryTree* tree);
+
+/*
+ * 包含min函数的栈实现
+*/
+// template<typename T>
+// class StackWithMin{
+// public:
+//     void push(const T& value);
+//     void pop();
+//     T& min() const();
+// };
+
 #endif //CPPLIB_CHAPTER3_BASE_H
