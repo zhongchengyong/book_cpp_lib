@@ -73,3 +73,11 @@ TEST(SO_COUNT, ONE){
     int n = 7;
     EXPECT_EQ(3, NumberOf1(n));
 }
+
+TEST(SO_SOLUTION, POPORDER){
+    int push[] = {1,2,3,4,5};
+    int pop1[] = {4,5,3,2,1};
+    int pop2[] = {4,3,5,1,2};
+    EXPECT_EQ(true, IsPopOrder(push, pop1, 5));
+    EXPECT_EQ(false, IsPopOrder(push, pop2, 5));
+}

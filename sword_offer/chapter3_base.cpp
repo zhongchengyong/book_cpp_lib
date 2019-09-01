@@ -212,3 +212,44 @@ void MirrorBinaryTree(BinaryTree* tree){
     if(tree->left) MirrorBinaryTree(tree->left);
     if(tree->right) MirrorBinaryTree(tree->right);
 }
+
+bool IsPopOrder(const int* push, const int* pop, int length){
+    std::stack<int> st;
+    int idx = 0, pop_idx = 0;
+    while(idx < length){
+        if(st.empty() || (st.top() != *pop)){
+            st.push(*push);
+            push++;
+            idx++;
+        }else{
+            st.pop();
+            pop++;
+            pop_idx++;
+        }
+    }
+    while(!st.empty()){
+        if(st.top() != *pop){
+            return false;
+        }else{
+            pop++;
+            pop_idx++;
+            st.pop();
+        }
+    }
+    return pop_idx == length;
+}
+
+
+void PrintTopToBottom(BinaryTree* root){
+    if(root != nullptr){
+        std::deque<BinaryTree*> tree_deque;
+        tree_deque.push_back(root);
+        while(!tree_deque.empty()){
+            BinaryTree* node = tree_deque.front();
+            std::cout << node->value << " ";
+            tree_deque.pop_front();
+            if(node->left) tree_deque.push_back(node->left);
+            if(node->right) tree_deque.push_back(node->right);
+        }
+    }
+}

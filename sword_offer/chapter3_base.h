@@ -64,4 +64,8 @@ void MirrorBinaryTree(BinaryTree* tree);
 //     T& min() const();
 // };
 
+bool IsPopOrder(const int* push, const int* pop, int length);
+
+/// 基于deque来实现二叉树的遍历
+void PrintTopToBottom(BinaryTree* root);
 #endif //CPPLIB_CHAPTER3_BASE_H
