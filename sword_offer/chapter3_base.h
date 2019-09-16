@@ -68,4 +68,6 @@ bool IsPopOrder(const int* push, const int* pop, int length);
 
 /// 基于deque来实现二叉树的遍历
 void PrintTopToBottom(BinaryTree* root);
+
+bool VerifySquenceOfBST(int sequence[], int length);
 #endif //CPPLIB_CHAPTER3_BASE_H
